@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #08080a;
+  --foreground: #f5f2eb;
+  --muted: #8e9099;
+  --muted-foreground: #a1a3ad;
+  --card: #0e0f13;
+  --card-border: rgba(255, 255, 255, 0.07);
+  --gold-accent: #c5a880;
+  --gold-hover: #dfc299;
+  --gold-muted: rgba(197, 168, 128, 0.15);
+  --sapphire-accent: #1e3a5f;
+  --titanium-line: rgba(255, 255, 255, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-obsidian: #08080a;
+  --color-obsidian-deep: #050506;
+  --color-charcoal: #121316;
+  --color-graphite: #1a1c20;
+  --color-titanium: #26282e;
+  --color-ivory: #f5f2eb;
+  --color-ivory-dim: #c8c5bc;
+  --color-gold: #c5a880;
+  --color-gold-bright: #dfc299;
+  --color-gold-subtle: rgba(197, 168, 128, 0.18);
+  --color-sapphire: #1e3a5f;
+  --color-sapphire-light: #2a4d7a;
+  
+  --font-serif: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #c5a880;
+  selection-color: #08080a;
+}
+
+::selection {
+  background-color: #c5a880;
+  color: #08080a;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2127;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* Luxury Utilities */
+.hairline-b {
+  border-bottom: 1px solid var(--titanium-line);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--titanium-line);
+}
+
+.hairline-border {
+  border: 1px solid var(--titanium-line);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5f2eb 20%, #c5a880 70%, #99784b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-nav {
+  background: rgba(8, 8, 10, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.editorial-card {
+  background: #0e0f13;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+  border-color: rgba(197, 168, 128, 0.35);
+  transform: translateY(-2px);
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 8s ease-in-out infinite;
 }
