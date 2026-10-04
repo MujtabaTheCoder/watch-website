@@ -59,12 +59,12 @@ export function Navbar() {
         {/* Brand Wordmark (VELLORE) */}
         <Link
           href="/"
-          className="flex flex-col items-center group text-center"
+          className="flex flex-col items-center group text-center min-w-0 px-1"
         >
-          <span className="font-serif text-xl sm:text-2xl tracking-[0.28em] text-[#F5F1E8] group-hover:text-[#C6A15B] transition-colors duration-300 font-semibold uppercase">
+          <span className="font-serif text-lg sm:text-2xl tracking-[0.22em] sm:tracking-[0.28em] text-[#F5F1E8] group-hover:text-[#C6A15B] transition-colors duration-300 font-semibold uppercase truncate">
             VELLORE
           </span>
-          <span className="text-[7.5px] sm:text-[8.5px] tracking-[0.34em] uppercase text-[#C6A15B] font-light -mt-0.5 opacity-90">
+          <span className="text-[7px] sm:text-[8.5px] tracking-[0.26em] sm:tracking-[0.34em] uppercase text-[#C6A15B] font-light -mt-0.5 opacity-90 truncate">
             TIME, WORN BEAUTIFULLY
           </span>
         </Link>
@@ -91,12 +91,12 @@ export function Navbar() {
         </nav>
 
         {/* Right Actions: Search, Cart Button, Admin Link */}
-        <div className="flex items-center space-x-2.5 sm:space-x-4">
+        <div className="flex items-center space-x-1.5 sm:space-x-3 flex-shrink-0">
           {/* Live Search Trigger Button */}
           <button
             type="button"
             onClick={() => openSearch()}
-            className="p-2 text-[#F5F1E8]/70 hover:text-[#C6A15B] transition-colors flex items-center gap-1.5"
+            className="p-1.5 sm:p-2 text-[#F5F1E8]/70 hover:text-[#C6A15B] transition-colors flex items-center gap-1.5"
             title="Search Collections (Ctrl+K)"
           >
             <Search className="w-4 h-4" />
@@ -105,25 +105,26 @@ export function Navbar() {
             </span>
           </button>
 
-          {/* Cart Button */}
+          {/* Cart Button: Touch-friendly and perfectly sized on mobile */}
           <button
             onClick={toggleCart}
-            className="relative flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#C6A15B]/40 bg-[#121319]/80 hover:bg-[#C6A15B]/10 hover:border-[#C6A15B] text-[#C6A15B] transition-all duration-300 font-mono text-[11px] tracking-wider shadow-[0_0_15px_rgba(198,161,91,0.15)]"
+            className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 rounded-full border border-[#C6A15B]/40 bg-[#121319]/90 hover:bg-[#C6A15B]/15 hover:border-[#C6A15B] text-[#C6A15B] transition-all duration-300 font-mono text-[10px] sm:text-[11px] tracking-wider shadow-[0_0_15px_rgba(198,161,91,0.15)] flex-shrink-0"
+            aria-label={`Open shopping cart with ${totalItems} items`}
           >
             <ShoppingBag className="w-3.5 h-3.5 text-[#C6A15B]" />
-            <span className="font-semibold">CART</span>
+            <span className="hidden xs:inline sm:inline font-semibold">CART</span>
             <span className="text-[10px] text-[#F5F1E8] font-bold">
-              [ {totalItems} ]
+              [{totalItems}]
             </span>
           </button>
 
           {/* Profile / Admin link */}
           <Link
             href="/admin"
-            className="w-8 h-8 rounded-full border border-white/15 bg-white/5 hover:border-[#C6A15B]/60 flex items-center justify-center text-[#F5F1E8]/80 hover:text-[#C6A15B] transition-colors"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/15 bg-white/5 hover:border-[#C6A15B]/60 flex items-center justify-center text-[#F5F1E8]/80 hover:text-[#C6A15B] transition-colors flex-shrink-0"
             title="Admin Portal"
           >
-            <User className="w-4 h-4" />
+            <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </Link>
         </div>
       </div>

@@ -26,8 +26,8 @@ export function AddToCartNotification() {
   const imageUrl = product.images[0] || "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80";
 
   return (
-    <div className="fixed top-20 right-4 sm:right-8 z-[110] max-w-sm w-full animate-in slide-in-from-top-4 fade-in duration-300">
-      <div className="rounded-2xl bg-[#0E0F13]/95 backdrop-blur-xl border border-[#C6A15B]/40 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.8)] relative overflow-hidden">
+    <div className="fixed top-16 sm:top-20 left-3 right-3 sm:left-auto sm:right-8 z-[110] max-w-sm sm:w-full mx-auto sm:mx-0 animate-in slide-in-from-top-4 fade-in duration-300">
+      <div className="rounded-2xl bg-[#0E0F13]/95 backdrop-blur-xl border border-[#C6A15B]/40 p-3.5 sm:p-4 shadow-[0_12px_40px_rgba(0,0,0,0.8)] relative overflow-hidden">
         {/* Subtle Gold Accent Gradient */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent animate-pulse" />
 
